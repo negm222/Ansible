@@ -1,0 +1,33 @@
+---
+- name: Install Apache
+  apt:
+    name: apache2
+    state: present
+  notify:
+    - Restart Apache
+
+- name: Copy HTML, CSS, and JS files to the web directory
+  copy:
+    src: "{{ item }}"
+    dest: /var/www/html/
+    owner: www-data
+    group: www-data
+    mode: '0755'
+  loop:
+    - index.html
+    - style.css
+    - script.js
+
+- name: Copy dynamic HTML template
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+    owner: www-data
+    group: www-data
+    mode: '0644'
+
+- name: Ensure Apache is running and enabled
+  service:
+    name: apache2
+    state: started
+    enabled: yes

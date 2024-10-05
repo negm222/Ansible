@@ -1,0 +1,6 @@
+---
+- name: Deploy Perfect Weight Calculator Website
+  hosts: webserver
+  become: yes
+  roles:
+    - webserver
