@@ -22,5 +22,5 @@ The Perfect Weight Calculator is a web application that assists users in calcula
 - **Variables**: To store information such as the site title and pass it to the templates.
 
 ## Project Images
-![Screenshot of the Application](screen.png)
-![Screenshot of the Application](running.png)
+![Screenshot of the Application](myscreen.png)
+![Screenshot of the Application](runing.png)
